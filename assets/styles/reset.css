@@ -1,0 +1,34 @@
+/* Box sizing rules. */
+*, *::before, *::after {
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+}
+
+/* Padding, margin and border rules. */
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+/* Prevent font size inflation. */
+html, body {
+   width: 100%;
+   height: 100%;
+   font-size: 100%;
+   -moz-text-size-adjust: none;
+   -webkit-text-size-adjust: none;
+   text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be remove. */
+/* ul[role="list"],
+ol[role="list"] {
+   list-style: none;
+} */
+
+/* Inherit fonts inputs and buttons. */
+input, button, textarea, select {
+   font: inherit;
+}
