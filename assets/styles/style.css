@@ -1,0 +1,40 @@
+.wrapper {
+   width: 100vw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.content {
+   width: 920px;
+   border-radius: 12px;
+   padding: 32px;
+   margin: 0 auto;
+   border: 2px dashed green;
+}
+
+.content h1 {
+   font-size: 30px;
+   text-align: center;
+   font-weight: 900;
+}
+
+.form {
+   display: flex;
+   margin: 32px;
+   border: 2px dashed pink;
+}
+
+.form__input {
+   width: 75%;
+   border-radius: 4px;
+   padding: 16px 24px;
+   font-size: 18px;
+   border: 2px dashed red;
+}
+
+.form__search-btn {
+   width: 25%;
+   border-radius: 4px;
+   border: 2px dashed yellow;
+}
