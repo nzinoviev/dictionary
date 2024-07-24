@@ -6,10 +6,15 @@
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const input = document.getElementById("word-input");
 const form = document.querySelector(".form");
+const containerWord = document.querySelector(".results__word");
 
 let state = {
    word: "",
 };
+
+const insertWord = () => {
+   containerWord.innerText = state.word;
+}
 
 const handleSubmit = async (e) => {
    e.preventDefault(); // Убирает перезагрузку страницы. Почитать зачем она нужна!
@@ -22,7 +27,7 @@ const handleSubmit = async (e) => {
       console.log(data);
 
       if (response.ok && data.length) {
-
+         insertWord();
       }
    } catch (error) {
       console.log("Error: ", error);
