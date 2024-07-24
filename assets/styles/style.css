@@ -69,6 +69,7 @@
    margin-top: 16px;
    display: flex;
    flex-direction: column;
+   border: 2px dashed blue;
 }
 
 .result__item {
@@ -78,10 +79,38 @@
 .result__item-part-of-speach {
    font-size: 14px;
    font-weight: 700;
+   border: 2px dashed red;
 }
 
 .result__item-definitions {
    margin-top: 5px;
    display: flex;
    flex-direction: column;
+   border: 2px dashed brown;
+}
+
+.result__item-definition {
+   position: relative;
+   border-radius: 4px;
+   padding: 16px;
+   border: 2px dashed black;
+}
+
+.result__item-definition p {
+   font-size: 20px;
+   position: relative;
+   border: 2px dashed blue;
+}
+
+.results__item-example {
+   padding-top: 5px;
+   margin-top: 5px;
+   border: 2px dashed green;
+}
+
+.results__item-example p {
+   position: relative;
+   padding-left: 16px;
+   font-size: 14px;
+   border: 2px dashed red;
 }
