@@ -3,4 +3,36 @@
 // TODO: Добавить функционал для воспроизведения звука.
 // TODO: Вставить полученные данные в контейнер с результатами (results__list).
 
-console.log("Hello, world!");
+const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+const input = document.getElementById("word-input");
+const form = document.querySelector(".form");
+
+let state = {
+   word: "",
+};
+
+const handleSubmit = async (e) => {
+   e.preventDefault(); // Убирает перезагрузку страницы. Почитать зачем она нужна!
+
+   if (!state.word.trim()) { return; }
+
+   try {
+      const response = await fetch(`${url}${state.word}`);
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok && data.length) {
+
+      }
+   } catch (error) {
+      console.log("Error: ", error);
+   }
+}
+
+const handleKeyup = (e) => {
+   const value = e.target.value;
+   state.word = value;
+}
+
+input.addEventListener("keyup", handleKeyup);
+form.addEventListener("submit", handleSubmit);
