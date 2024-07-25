@@ -83,10 +83,9 @@ body {
 
 }
 
-.result__item-part-of-speach {
+.result__item-part-of-speech {
    font-size: 14px;
    font-weight: 700;
-   border: 2px dashed red;
 }
 
 .result__item-definitions {

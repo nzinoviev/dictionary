@@ -33,7 +33,7 @@ const renderDefinition = (itemDefinition) => {
 const renderItem = (item) => {
    const itemDefinition = item.definitions[0];
    return ` <div class="result__item">
-               <div class="result__item-part-of-speach">
+               <div class="result__item-part-of-speech">
                   ${item.partOfSpeech}
                </div>
 
