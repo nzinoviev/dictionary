@@ -1,4 +1,4 @@
-// TODO: Вставить полученные данные в контейнер с результатами (results__list).
+// TODO: Добавить обработку ошибку при вводе некорректного слова.
 
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const input = document.getElementById("word-input");
