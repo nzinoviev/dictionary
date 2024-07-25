@@ -14,6 +14,22 @@ let state = {
    phonetics: []
 };
 
+const getDefinitions = (definitions) => {
+   return definitions.map(renderDefinition).join("");
+}
+
+const renderDefinition = (itemDefinition) => {
+   const example = itemDefinition.example ?
+                  `<div class="results__item-example">
+                     <p>Example: ${itemDefinition.example}</p>
+                  </div>` : "";
+
+   return ` <div class="result__item-definition">
+               <p>${itemDefinition.definition}</p>
+               ${example}
+            </div>`
+}
+
 const renderItem = (item) => {
    const itemDefinition = item.definitions[0];
    return ` <div class="result__item">
@@ -22,12 +38,7 @@ const renderItem = (item) => {
                </div>
 
                <div class="result__item-definitions">
-                  <div class="result__item-definition">
-                     <p>${itemDefinition.definition}</p>
-                     <div class="results__item-example">
-                        <p>${itemDefinition.example}</p>
-                     </div>
-                  </div>
+                  ${getDefinitions(item.definitions)}
                </div>
             </div>`;
 }
