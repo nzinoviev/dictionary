@@ -5,6 +5,8 @@ const input = document.getElementById("word-input");
 const form = document.querySelector(".form");
 const containerWord = document.querySelector(".results__word");
 const soundButton = document.querySelector(".results__sound");
+const resultsList = document.querySelector(".results__list");
+const results = document.querySelector(".results");
 
 let state = {
    word: "",
@@ -12,12 +14,38 @@ let state = {
    phonetics: []
 };
 
+const renderItem = (item) => {
+   const itemDefinition = item.definitions[0];
+   return ` <div class="result__item">
+               <div class="result__item-part-of-speach">
+                  ${item.partOfSpeech}
+               </div>
+
+               <div class="result__item-definitions">
+                  <div class="result__item-definition">
+                     <p>${itemDefinition.definition}</p>
+                     <div class="results__item-example">
+                        <p>${itemDefinition.example}</p>
+                     </div>
+                  </div>
+               </div>
+            </div>`;
+}
+
+const showResults = () => {
+   results.style.display = "block";
+   resultsList.innerHTML = "";
+   state.meanings.forEach((item) =>
+      (resultsList.innerHTML += renderItem(item)));
+}
+
 const insertWord = () => {
    containerWord.innerText = state.word;
 }
 
 const handleSubmit = async (e) => {
-   e.preventDefault(); // Убирает перезагрузку страницы. Почитать зачем она нужна!
+   // Убирает перезагрузку страницы. TODO: Почитать зачем она нужна!
+   e.preventDefault();
 
    if (!state.word.trim()) { return; }
 
@@ -35,6 +63,7 @@ const handleSubmit = async (e) => {
             phonetics: item.phonetics
          }
          insertWord();
+         showResults();
       }
    } catch (error) {
       console.log("Error: ", error);
